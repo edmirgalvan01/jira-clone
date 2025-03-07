@@ -14,6 +14,7 @@ import {
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
 
 const formSchema = z.object({
   email: z.string().trim().email(),
@@ -104,6 +105,17 @@ export const SignInCard = () => {
           <FaGithub className="mr-2 size-5" />
           Login with Github
         </Button>
+      </CardContent>
+      <div className="px-7">
+        <DottedSeparator />
+      </div>
+      <CardContent className="p-7 flex items-center justify-center">
+        <p>
+          Don&apos;t have an account?
+          <Link href="/sign-up">
+            <span className="text-blue-700">&nbsp;Sign Up</span>
+          </Link>
+        </p>
       </CardContent>
     </Card>
   );
